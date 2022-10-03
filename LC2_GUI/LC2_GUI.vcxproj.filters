@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Ui">
+      <UniqueIdentifier>{f922ab2b-94ff-4233-a5ba-39ed0539ada1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\glsl">
+      <UniqueIdentifier>{6cdc6f17-3b85-45ed-aa91-330cfecd5f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{db2f99da-52c6-4990-b1fb-443251d93cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{cd487467-0e9d-4b16-a48c-f564a2d596b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\fonts">
+      <UniqueIdentifier>{ef39d69a-c2aa-48d7-b803-dfab9eeb956a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GWindow.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiRender.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui_Ext.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="GWidget.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="GButton.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Ui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GWindow.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiRender.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui_Ext.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="GWidget.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="GButton.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Ui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="common.fs">
+      <Filter>Resource\glsl</Filter>
+    </None>
+    <None Include="common.vs">
+      <Filter>Resource\glsl</Filter>
+    </None>
+    <None Include="font.fs">
+      <Filter>Resource\glsl</Filter>
+    </None>
+    <None Include="font.vs">
+      <Filter>Resource\glsl</Filter>
+    </None>
+    <None Include="Fonts\simsun.ttc">
+      <Filter>Resource\fonts</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Fonts\arial.ttf">
+      <Filter>Resource\fonts</Filter>
+    </Font>
+    <Font Include="Fonts\simhei.ttf">
+      <Filter>Resource\fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
