@@ -1,11 +1,10 @@
 #include "stdafx.h"
-#include "GWindow.h"
-#include "GuiRender.h"
+#include "GMainWindow.h"
 #include "ImGui_Ext.h"
 
 namespace {
 
-	GWindow* gWindow;
+	GMainWindow* gWindow;
 
 	void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
 
@@ -33,26 +32,19 @@ namespace {
 
 	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode) {
 
-		//LOGI("Key %d", key);
-		//LOGI("scancode %d", scancode);
-		//LOGI("action %d", action);
-		//LOGI("mode %d", mode);
-		//GLFW_MOD_CONTROL;
 		if (action == GLFW_PRESS) {
 			gWindow->OnKeyDown(key ,mode);
 		}
 		else if (action == GLFW_RELEASE) {
 			gWindow->OnKeyRelease(key , mode);
 		}
-
 	}
-
 
 };
 
 int main(int argc, char* argv[]) {
 
-	gWindow = new GWindow("GWindow", 800, 600);
+	gWindow = new GMainWindow("hello Main Window", 800, 600);
 
 	gWindow->SetFrameBufferSizeCallback(framebuffer_size_callback);
 	gWindow->SetCursorposCallback(mouse_callback);
@@ -60,7 +52,7 @@ int main(int argc, char* argv[]) {
 	gWindow->SetKeyCallback(key_callback);
 	gWindow->SetMouseButtonCallback(mouse_button_callback);
 
-	ImGui::Init(gWindow->window);
+	ImGui::Init(gWindow->state->window);
 	while (!gWindow->ShouldClose()) {
 
 		gWindow->OnUpdate();
@@ -72,5 +64,5 @@ int main(int argc, char* argv[]) {
 	}
 
 	gWindow->OnDestroy();
-
+	return 0;
 }

@@ -30,14 +30,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GWindow.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="GuiRender.cpp">
-      <Filter>Ui</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
       <Filter>Core</Filter>
@@ -54,9 +48,6 @@
     <ClCompile Include="GWidget.cpp">
       <Filter>Ui</Filter>
     </ClCompile>
-    <ClCompile Include="GButton.cpp">
-      <Filter>Ui</Filter>
-    </ClCompile>
     <ClCompile Include="Gui.cpp">
       <Filter>Ui</Filter>
     </ClCompile>
@@ -66,17 +57,11 @@
     <ClCompile Include="Character.cpp">
       <Filter>Ui</Filter>
     </ClCompile>
-    <ClCompile Include="MainWindow.cpp">
-      <Filter>Common</Filter>
+    <ClCompile Include="GMainWindow.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GWindow.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="GuiRender.h">
-      <Filter>Ui</Filter>
-    </ClInclude>
     <ClInclude Include="Mesh.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -92,9 +77,6 @@
     <ClInclude Include="GWidget.h">
       <Filter>Ui</Filter>
     </ClInclude>
-    <ClInclude Include="GButton.h">
-      <Filter>Ui</Filter>
-    </ClInclude>
     <ClInclude Include="Gui.h">
       <Filter>Ui</Filter>
     </ClInclude>
@@ -107,8 +89,8 @@
     <ClInclude Include="Character.h">
       <Filter>Ui</Filter>
     </ClInclude>
-    <ClInclude Include="MainWindow.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="GMainWindow.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

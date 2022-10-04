@@ -155,15 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
-    <ClCompile Include="GButton.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="Gui.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="GuiRender.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -171,16 +163,12 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="GWindow.cpp" />
+    <ClCompile Include="GMainWindow.cpp" />
     <ClCompile Include="ImGui_Ext.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainWindow.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="State.cpp" />
@@ -188,15 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
-    <ClInclude Include="GButton.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="Gui.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="GuiRender.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -204,12 +184,8 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="GWindow.h" />
+    <ClInclude Include="GMainWindow.h" />
     <ClInclude Include="ImGui_Ext.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="MainWindow.h">
       <SubType>
       </SubType>
     </ClInclude>

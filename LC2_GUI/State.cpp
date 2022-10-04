@@ -1,30 +1,14 @@
 #include "State.h"
 
-State::State()
+State::State(std::string title, int width, int height) :title(title), width(width), height(height), o_width(width), o_height(height)
 {
 
-	Resize();
-
-	commonShader = std::make_unique<Shader>("common.vs", "common.fs");
-
-	std::vector<Vertex> vertices = {
-		Vertex(glm::vec3(-1.0f, 1.0f, 0.0f), glm::vec2(0.0f, 1.0f)),
-		Vertex(glm::vec3(-1.0f, -1.0f, 0.0f), glm::vec2(0.0f, 0.0f)),
-		Vertex(glm::vec3(1.0f, 1.0f, 0.0f), glm::vec2(1.0f, 1.0f)),
-		Vertex(glm::vec3(1.0f, -1.0f, 0.0f), glm::vec2(1.0f, 0.0f)),
-	};
-
-	squareMesh = std::make_unique<Mesh>(vertices);
-
-	LoadFont();
 
 	
 }
 
 void State::LoadFont()
 {
-	window = glfwGetCurrentContext();
-	glfwGetFramebufferSize(window, &o_width, &o_height);
 
 	//static const Shader *shader = Shader::LoadShader("glsl/font");
 	fontShader = std::make_unique<Shader>("font.vs", "font.fs");
@@ -52,6 +36,7 @@ void State::LoadFont()
 	// Load first 128 characters of ASCII set
 	for (GLubyte c = 0; c < 128; c++)
 	{
+	
 		// Load character glyph 
 		if (FT_Load_Char(face, c, FT_LOAD_RENDER))
 		{
@@ -85,7 +70,8 @@ void State::LoadFont()
 			glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
 			face->glyph->advance.x
 		};
-
+		//LOGI("%c h %d %d",c, character.Size.y, character.Bearing.y);
+		
 		Characters.insert(std::pair<GLchar, Character>(c, character));
 	}
 	glBindTexture(GL_TEXTURE_2D, 0);
@@ -114,4 +100,21 @@ void State::Resize()
 	if (height != 0) {
 		aspect = (float)width / (float)height;
 	}
+}
+
+void State::Init()
+{
+	commonShader = std::make_unique<Shader>("common.vs", "common.fs");
+
+	std::vector<Vertex> vertices = {
+		Vertex(glm::vec3(-1.0f, 1.0f, 0.0f), glm::vec2(0.0f, 1.0f)),
+		Vertex(glm::vec3(-1.0f, -1.0f, 0.0f), glm::vec2(0.0f, 0.0f)),
+		Vertex(glm::vec3(1.0f, 1.0f, 0.0f), glm::vec2(1.0f, 1.0f)),
+		Vertex(glm::vec3(1.0f, -1.0f, 0.0f), glm::vec2(1.0f, 0.0f)),
+	};
+
+	squareMesh = std::make_unique<Mesh>(vertices);
+
+	LoadFont();
+
 }

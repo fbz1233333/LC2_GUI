@@ -1,24 +1,19 @@
 #pragma once
 #include "stdafx.h"
 #include "GWidget.h"
-#include "MainWindow.h"
+#include "State.h"
 
-class GWindow
+class GMainWindow :public GWidget
 {
 public:
-	MainWindow* ui;
+	std::unique_ptr<State> state;
 public:
-	GLFWwindow* window;
-	std::string title = "GWindow";
-	int width = 800;
-	int height = 600;
-	float aspect = 1.33f;
+
 
 public:
-	GWindow(std::string title,int width, int height);
+	GMainWindow(std::string title,int width, int height);
 
 	void OnInit();
-	void OnResize(int w, int h);
 	void OnUpdate();
 	void OnRender();
 	void OnDestroy();
@@ -44,7 +39,9 @@ public:
 	void OnScroll(double x, double y);
 	void OnKeyDown(int key, int mod);
 	void OnKeyRelease(int key, int mod);
-
-	GWidget* GetMouseBind(glm::ivec2 pos);
+public:
+	// DrawCalls;
+	void Rect(glm::ivec2 pos, glm::ivec2 size);
+	void Text(glm::ivec2 pos, std::string value);
 };
 

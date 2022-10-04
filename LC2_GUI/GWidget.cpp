@@ -1,5 +1,4 @@
 #include "GWidget.h"
-#include "GuiRender.h"
 
 GWidget * GWidget::GetParent()
 {
@@ -16,26 +15,7 @@ GWidget::GWidget(glm::ivec2 pos,glm::ivec2 size) :pos(pos), size(size)
 
 void GWidget::OnSetup()
 {
-	glm::vec2 p_pos;
-	glm::vec2 p_size;
 
-	if (parent) {
-		p_pos = parent->pos;
-		p_size = parent->size;
-	}
-	else {
-		p_pos = glm::ivec2(0, 0);
-		p_size = GuiRender::GetSize();
-	}
-	auto r_pos = glm::ivec2(
-		p_pos.x + margin.x,
-		p_pos.y + margin.y
-	);
-	auto r_size = glm::ivec2(
-		p_size.x - margin.x * 2,
-		p_size.y - margin.y * 2
-
-	);
 
 	//GuiRender::AddRect(Gui::Rectangle(r_pos, r_size, borderColor, GL_LINE,20));
 	//GuiRender::AddRect(Gui::Rectangle(r_pos, r_size, backgroudColor, GL_FILL,2));
