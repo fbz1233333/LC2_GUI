@@ -41,11 +41,9 @@ void GWindow::OnInit()
 	}
 
 	GuiRender::OnInit();
-}
 
-namespace {
-	GButton* button;
-};
+	ui = new MainWindow();
+}
 
 
 namespace Funcs {
@@ -61,20 +59,6 @@ namespace Funcs {
 }
 
 using namespace Funcs;
-
-void GWindow::OnStart()
-{
-
-	//button = new GButton();
-	//button->SetText("hello world my name is fbz");
-	//button->on_mouse_move = &func;
-	//button->on_hover = &func2;
-
-	//widgets.push_back(button);
-
-
-	// Setup
-}
 
 void GWindow::OnDebug()
 {
@@ -101,6 +85,7 @@ void GWindow::OnUpdate()
 void GWindow::OnRender()
 {
 	GuiRender::OnClear();
+	ui->OnSetup();
 	GuiRender::OnRender();
 
 }

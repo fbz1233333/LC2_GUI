@@ -15,6 +15,8 @@ public:
 	int width;
 	int height;
 	float aspect;
+	float zDepth = 0.0f;
+	glm::vec3 color;
 	std::unique_ptr<Shader> commonShader, fontShader;
 	std::unique_ptr<Mesh> squareMesh;
 	std::vector<Rectangle> rects;

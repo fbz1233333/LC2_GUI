@@ -1,10 +1,12 @@
 #pragma once
 #include "stdafx.h"
 #include "GWidget.h"
-
+#include "MainWindow.h"
 
 class GWindow
 {
+public:
+	MainWindow* ui;
 public:
 	GLFWwindow* window;
 	std::string title = "GWindow";
@@ -16,14 +18,12 @@ public:
 	GWindow(std::string title,int width, int height);
 
 	void OnInit();
-	void OnStart();
 	void OnResize(int w, int h);
 	void OnUpdate();
 	void OnRender();
 	void OnDestroy();
 	void OnSwap();
 	void OnClose();
-
 	void OnDebug();
 
 

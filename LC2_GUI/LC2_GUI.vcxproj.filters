@@ -66,6 +66,9 @@
     <ClCompile Include="Character.cpp">
       <Filter>Ui</Filter>
     </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GWindow.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Ui</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

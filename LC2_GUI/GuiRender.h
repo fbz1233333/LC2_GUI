@@ -18,7 +18,7 @@ public:
 	static void OnClear();
 public:
 
-	static void Rect(const Rectangle& rect);
+	static void Rect(glm::ivec2 pos, glm::ivec2 size);
 	static void Text(const Text& text);
 public:
 
@@ -30,6 +30,7 @@ public:
 
 	static void AddRect(const Rectangle& rect);
 	static void AddText(const Gui::Text& text);
+	static void PolyMode(int mod);
 
 	static glm::ivec2 GetSize();
 };

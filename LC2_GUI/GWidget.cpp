@@ -6,6 +6,10 @@ GWidget * GWidget::GetParent()
 	return parent;
 }
 
+GWidget::GWidget(GWidget * parent) :parent(parent)
+{
+}
+
 GWidget::GWidget(glm::ivec2 pos,glm::ivec2 size) :pos(pos), size(size)
 {
 }
@@ -21,7 +25,7 @@ void GWidget::OnSetup()
 	}
 	else {
 		p_pos = glm::ivec2(0, 0);
-		p_pos = GuiRender::GetSize();
+		p_size = GuiRender::GetSize();
 	}
 	auto r_pos = glm::ivec2(
 		p_pos.x + margin.x,
@@ -32,8 +36,9 @@ void GWidget::OnSetup()
 		p_size.y - margin.y * 2
 
 	);
-	GuiRender::AddRect(Gui::Rectangle(r_pos, r_size, borderColor, GL_LINE,2));
-	GuiRender::AddRect(Gui::Rectangle(r_pos, r_size, borderColor, GL_FILL,2));
+
+	//GuiRender::AddRect(Gui::Rectangle(r_pos, r_size, borderColor, GL_LINE,20));
+	//GuiRender::AddRect(Gui::Rectangle(r_pos, r_size, backgroudColor, GL_FILL,2));
 
 }
 

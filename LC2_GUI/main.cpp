@@ -66,9 +66,8 @@ int main(int argc, char* argv[]) {
 		gWindow->OnUpdate();
 		gWindow->OnRender();
 
-	
+		// __Debug
 		gWindow->OnDebug();
-
 		gWindow->OnSwap();
 	}
 

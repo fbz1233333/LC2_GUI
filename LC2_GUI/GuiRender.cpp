@@ -39,14 +39,8 @@ void GuiRender::OnClear()
 
 }
 
-void GuiRender::Rect(const Rectangle & rect)
+void GuiRender::Rect(glm::ivec2 pos, glm::ivec2 size)
 {
-	auto pos = rect.pos;
-	auto size = rect.size;
-
-	glLineWidth(rect.lineWidth);
-	glPolygonMode(GL_FRONT_AND_BACK, rect.mod);
-
 	auto pos_axis = glm::vec2(
 		2 * ((float)pos.x + (float)size.x * 0.5f) / state->width - 1.0f,
 		-2 * ((float)pos.y + (float)size.y * 0.5f) / state->height + 1.0f
@@ -60,8 +54,8 @@ void GuiRender::Rect(const Rectangle & rect)
 	state->commonShader->Use();
 	state->commonShader->SetVec2("size", size_axis);
 	state->commonShader->SetVec2("pos", pos_axis);
-	state->commonShader->SetVec3("color", rect.color);
-	state->commonShader->SetFloat("zDepth", 1.0f);
+	state->commonShader->SetVec3("color", state->color);
+	state->commonShader->SetFloat("zDepth", state->zDepth);
 
 	state->squareMesh->DrawArrays(GL_TRIANGLE_STRIP);
 }
@@ -142,6 +136,8 @@ void GuiRender::OnRender()
 	glDisable(GL_BLEND);
 
 	//LOGI("%d size", state->rects.size());
+	PolyMode(GL_LINE);
+	LOGI("size %d", state->rects.size());
 	for (Rectangle rect : state->rects) {
 		Rect(rect);
 	}
@@ -168,12 +164,6 @@ void GuiRender::OnResize(int width, int height)
 void GuiRender::OnDebug()
 {
 	ImGui::Begin("hello");
-
-	//ImGui::SliderInt("left", &left, 0, state->width);
-	//ImGui::SliderInt("top", &top, 0, state->height);
-	//ImGui::SliderFloat("scale", &scale, 0.0f, 2.0f);
-
-
 	ImGui::End();
 
 }
@@ -187,6 +177,11 @@ void GuiRender::AddRect(const Gui::Rectangle& rect)
 void GuiRender::AddText(const Gui::Text & text)
 {
 	state->texts.push_back(text);
+}
+
+void GuiRender::PolyMode(int mod)
+{
+	glPolygonMode(GL_FRONT_AND_BACK, mod);
 }
 
 glm::ivec2 GuiRender::GetSize()
